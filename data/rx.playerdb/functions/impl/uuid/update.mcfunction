@@ -13,7 +13,13 @@ scoreboard players operation @s rx.uid = $cache.uid rx.temp
 scoreboard players operation @s rx.pdb.HasEntry = $cache.HasEntry rx.temp
 
 #> update name
-execute if score @s rx.pdb.HasEntry matches 1 run function rx.playerdb:api/get_self
+
+# Fix by GrifterMage - Remove infinite-loop-inducing call, replace the following commented line with direct call to the get function
+#execute if score @s rx.pdb.HasEntry matches 1 run function rx.playerdb:api/get_self
+execute if score @s rx.pdb.HasEntry matches 1 run scoreboard players operation $in.uid rx.io = @s rx.uid
+execute if score @s rx.pdb.HasEntry matches 1 run function rx.playerdb:api/get
+# End of fix.
+
 execute if score @s rx.pdb.HasEntry matches 1 run function rx.playerdb:impl/get_name
 execute if score @s rx.pdb.HasEntry matches 1 run data modify storage rx:io playerdb.old_name set from storage rx:global playerdb.players[{selected:1b}].info.name
 execute if score @s rx.pdb.HasEntry matches 1 run data modify storage rx:global playerdb.players[{selected:1b}].info.name set from storage rx:temp playerdb.player_name 

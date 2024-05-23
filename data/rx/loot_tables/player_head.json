@@ -21,7 +21,7 @@
                }
              },
              {
-               "function": "minecraft:set_nbt",
+               "function": "minecraft:set_custom_data",
                "tag": "{rx.player_head:1b}"
              }
            ],

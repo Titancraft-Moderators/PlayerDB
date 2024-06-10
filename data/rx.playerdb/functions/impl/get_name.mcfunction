@@ -10,4 +10,4 @@
 execute in minecraft:overworld run loot replace block 100000 0 0 container.0 loot rx:player_head
 
 #> copy to output
-execute in minecraft:overworld run data modify storage rx:temp playerdb.player_name set from block 100000 0 0 Items[0].tag.SkullOwner.Name
+execute in minecraft:overworld run data modify storage rx:temp playerdb.player_name set from block 100000 0 0 Items[0].components."minecraft:profile".name

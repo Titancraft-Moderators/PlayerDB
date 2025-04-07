@@ -5,7 +5,7 @@
 #> add new entry to uuid db
 
 #> if selected
-execute store result score $selected rx.temp if data storage rx:global playerdb.uuid[{selected:1b}] 
+execute store result score $selected rx.temp if data storage rx:global playerdb.uuid[{selected:1b}]
 
 #> we are pretending to add an entry to players but we move it to uuid
 execute if score $selected rx.temp matches 0 run scoreboard players operation $uid rx.temp = @s rx.uuid0

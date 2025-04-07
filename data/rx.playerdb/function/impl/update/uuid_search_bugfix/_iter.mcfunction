@@ -8,7 +8,7 @@ data modify storage rx:temp playerdb.UUID set from storage rx:temp playerdb.uuid
 function rx.playerdb:impl/uuid/select
 
 #> If no element selected, create a new one
-execute store result score $selected rx.temp if data storage rx:global playerdb.uuid[{selected:1b}] 
+execute store result score $selected rx.temp if data storage rx:global playerdb.uuid[{selected:1b}]
 execute if score $selected rx.temp matches 0 run data modify storage rx:global playerdb.uuid append value {selected: 1b}
 execute if score $selected rx.temp matches 0 store result score $uid rx.temp run data get storage rx:temp playerdb.uuid_db_update[-1].UUID[0]
 execute if score $selected rx.temp matches 0 run data remove storage rx:temp playerdb.bits

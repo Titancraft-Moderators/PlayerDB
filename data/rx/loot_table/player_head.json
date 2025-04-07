@@ -1,33 +1,32 @@
 {
-   "type": "minecraft:entity",
-   "pools": [
-     {
-       "rolls": 1,
-       "entries": [
-         {
-           "type": "minecraft:item",
-           "functions": [
-             {
-               "function": "minecraft:fill_player_head",
-               "entity": "this"
-             },
-             {
-               "function": "minecraft:set_name",
-               "entity": "this",
-               "name": {
-                  "selector":"@s",
-                  "color": "blue",
-                  "italic": false
-               }
-             },
-             {
-               "function": "minecraft:set_custom_data",
-               "tag": "{rx.player_head:1b}"
-             }
-           ],
-           "name": "minecraft:player_head"
-         }
-       ]
-     }
-   ]
- }
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:player_head",
+          "functions": [
+            {
+              "function": "minecraft:fill_player_head",
+              "entity": "this"
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Player's Head",
+                "color": "blue",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{rx.player_head:1b}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -16,7 +16,7 @@ lines = (
     'execute store result storage rx:temp playerdb.bits.b{bit} byte 1 run scoreboard players operation $bit rx.temp %= ${base} rx.int',  # noqa: E501
 )
 
-debug_line = 'tellraw @s[tag=rx.PDBDebug] [{"text":"", "color":"gold"}, {"text":"bit^: "}, {"score":{"name":"$bit", "objective":"rx.temp"}}]'  # noqa: E501
+debug_line = 'tellraw @s[tag=rx.PDBDebug] [{text:"", color:"gold"}, {text:"bit^: "}, {score:{"name":"$bit", objective:"rx.temp"}}]'  # noqa: E501
 
 out = [COMMENT]
 for i in range(0, int(math.log(MAX_INT, BASE)) + 2):

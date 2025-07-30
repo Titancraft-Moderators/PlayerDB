@@ -12,7 +12,7 @@ scoreboard players set rx.pdb.major load 1
 scoreboard players set rx.pdb.minor load 1
 scoreboard players set rx.pdb.patch load 1
 
-data modify storage rx:info playerdb.pretty_version set value '[{"storage": "rx:info", "nbt": "playerdb.version.major"}, ".", {"storage": "rx:info", "nbt": "playerdb.version.minor"}, ".", {"storage": "rx:info", "nbt": "playerdb.version.patch"}]'
+data modify storage rx:info playerdb.pretty_version set value [{storage: "rx:info", nbt: "playerdb.version.major"}, ".", {storage: "rx:info", nbt: "playerdb.version.minor"}, ".", {storage: "rx:info", nbt: "playerdb.version.patch"}]
 
 scoreboard objectives add rx.io dummy
 scoreboard objectives add rx.uid dummy
@@ -55,4 +55,4 @@ schedule function rx.playerdb:tick 1t replace
 #fill -30000000 1 1600 -30000000 1 1615 minecraft:bedrock
 
 #> cool admin msg is cool
-tellraw @a[tag=rx.admin] [{"text":"", "color":"gray"}, {"nbt": "playerdb.pretty_name", "storage": "rx:info", "interpret": true}, " ", {"storage": "rx:info", "nbt": "playerdb.pretty_version", "interpret": true}, " loaded"]
+tellraw @a[tag=rx.admin] [{text:"", color:"gray"}, {nbt: "playerdb.pretty_name", storage: "rx:info", interpret: true}, " ", {storage: "rx:info", nbt: "playerdb.pretty_version", interpret: true}, " loaded"]

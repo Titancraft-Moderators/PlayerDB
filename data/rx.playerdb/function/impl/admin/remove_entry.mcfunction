@@ -15,9 +15,9 @@ execute if score $size rx.temp matches 1 run function rx.playerdb:impl/uuid/sele
 execute if score $size rx.temp matches 1 run data modify storage rx:global playerdb.uuid[{selected:1b}].entries[-1].hasEntry set value 0b
 
 #>  success msg and remove selected player
-execute if score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{"text": "Successfully removed ", "color": "gold"}, {"storage":"rx:global", "nbt": "playerdb.players[{selected:1b}].info.name", "color":"#DAD6D6"}, "'s entry"]
-execute if score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{"text": "Don't forget to reset their rx.pdb.HasEntry score unless you ran admin/delete_player", "color": "gold"}]
+execute if score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{text: "Successfully removed ", color: "gold"}, {storage:"rx:global", nbt: "playerdb.players[{selected:1b}].info.name", color:"#DAD6D6"}, "'s entry"]
+execute if score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{text: "Don't forget to reset their rx.pdb.HasEntry score unless you ran admin/delete_player", color: "gold"}]
 execute if score $size rx.temp matches 1 run data remove storage rx:global playerdb.players[{selected:1b}]
 
 #> else: failed msg
-execute unless score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{"text": "Failed to remove entry. Entry does not exist", "color": "#CE4257"}]
+execute unless score $size rx.temp matches 1 run tellraw @a[tag=rx.admin] [{text: "Failed to remove entry. Entry does not exist", color: "#CE4257"}]

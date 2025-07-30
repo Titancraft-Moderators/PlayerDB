@@ -29,7 +29,7 @@ execute if score @s rx.pdb.HasEntry matches 1 run function rx.playerdb:api/save_
 data modify storage rx:global playerdb.uuid[{selected:1b}].entries[-1].name set from storage rx:temp playerdb.player_name
 
 #> admin :P
-tellraw @a[tag=rx.admin] [{"text": "", "color": "gray"}, {"nbt": "playerdb.pretty_name", "storage": "rx:info", "interpret": true}, ": ", {"storage": "rx:io", "nbt": "playerdb.old_name"}, " has changed their name to ", {"selector": "@s"}]
+tellraw @a[tag=rx.admin] [{text: "", color: "gray"}, {nbt: "playerdb.pretty_name", storage: "rx:info", interpret: true}, ": ", {storage: "rx:io", nbt: "playerdb.old_name"}, " has changed their name to ", {selector: "@s"}]
 
 #> api
 execute if score @s rx.pdb.HasEntry matches 1 run data modify storage rx:io playerdb.player set from storage rx:global playerdb.players[{selected:1b}]
